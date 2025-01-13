@@ -1,14 +1,23 @@
-'use client';
+"use client";
 
-import SignUpPage from "./components/SignUpPage";
+import { useEffect, useState } from "react";
+import SignUpPage from "../components/SignUpPage";
 
 
-const Home = () => {
+const App = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true)
+  },[])
+
+  if(isClient)
   return(
     <>
-    <SignUpPage />
-    </>
+      <SignUpPage />
+      </>
+    
   )
 };
 
-export default Home;
+export default App;

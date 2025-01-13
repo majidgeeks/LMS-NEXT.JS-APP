@@ -38,20 +38,14 @@ export default function SignUpPage() {
   };
 
   return (
-    // <div className="w-full min-h-screen flex flex-col lg:flex-row justify-evenly items-center gap-6 p-4 bg-gray-100"> 
-
     <div className="w-full min-h-screen flex flex-col lg:flex-row justify-evenly items-center gap-6 p-4 bg-gray-100">
-            {/* <div className="w-full lg:w-1/2 flex justify-center"> */}
       <div className="w-full lg:w-1/2 flex justify-center">
-      <Image src={'/authentic-image.webp'}
-        alt="learning" width={500} height={200}
+        <Image src={'/authentic-image.webp'}
+          alt="learning" width={500} height={200}
         />
-        </div>     
-        {/* <div className="w-full lg:w-1/2 flex flex-col items-center">  */}
+      </div>
       <div className=" w-full lg:w-1/2 flex flex-col items-center">
-      {/* className="mb-4 text-2xl font-semibold text-center" */}
         <h1 className="mb-4 text-2xl font-semibold text-center">Sign Up And Start Learning</h1>
-        {/* className="flex flex-col gap-4 w-full py-2" */}
         <div className="flex flex-col gap-4 w-full py-2">
           <Controller
             name="firstName"
@@ -118,7 +112,9 @@ export default function SignUpPage() {
                   value={value}
                   onChange={onChange}
                   className={'outline-none pr-1'} type={`${eye ? 'password' : 'text'}`}
-                  label={'Password :'} onRightIconClick={toggleEye} rightIcon={!eye ? <FiEye /> : <FiEyeOff />} />
+                  label={'Password :'} onRightIconClick={toggleEye} rightIcon={!eye ? <FiEye /> : <FiEyeOff />} 
+                  rightIconStyle="bg-red"
+                  />
                 {errors.password ? <p className="text-red-600">{errors.password.message}</p> : null}
               </>
             )}

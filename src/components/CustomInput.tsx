@@ -9,10 +9,11 @@ interface CustomInput{
     onRightIconClick? : () => void;
     value? : string;
     onChange? : () => void;
+    rightIconStyle? : string;
 }
 
 const CustomInput : React.FC<CustomInput> = ({ label, className,
-     rightIcon, placeholder, type, onRightIconClick, value, onChange  }) => {
+     rightIcon, placeholder, type, onRightIconClick, value, onChange, rightIconStyle  }) => {
     return (
         <div className="flex items-center w-full">
             <label htmlFor="" className="w-1/3 text-lg font-medium">{label}</label>
@@ -20,7 +21,8 @@ const CustomInput : React.FC<CustomInput> = ({ label, className,
                 <input onChange={onChange} value={value} type={type} placeholder={placeholder}
                  className={`bg-slate-200 flex-grow outline-none, ${className}`} />
                 {rightIcon && (
-                    <button className="cursor-pointer" onClick={onRightIconClick}>{rightIcon}</button>
+                    <button className={`cursor-pointer flex items-center justify-center ${rightIconStyle ||''}`}
+                     onClick={onRightIconClick}>{rightIcon}</button>
                 )}
 
             </div>
